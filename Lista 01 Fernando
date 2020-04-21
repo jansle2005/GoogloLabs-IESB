@@ -1,0 +1,306 @@
+JANSLE ADALBERTO SANTANA DE SOUSA  - MATRÍCULA : 2031133028
+
+TURMA DE 2ª-FEIRA - NOITE - IESB - ASA NORTE- PROF FERNANDO ANSELMO
+
+DICIPLINA: INTROD TEC CIEN DE DADOS
+
+=========== ## Lista 01 de Exercícios de Python ============ 
+
+O objetivo desta lista é treinar o aluno na linguagem de programação Python através da resolução de diversos tipos de exercícios com o aumento progressivo da dificuldade dos mesmos. 
+Obviamente, não existe fórmula mágica para se aprender uma nova linguagem (seja ela qual for) somente através da prática estaremos aptos a enfrentar os problemas encontrados no dia a dia.
+
+Lembre-se que o trabalho de um Cientista de Dados nunca é feito solitariamente, discussõoes são saudáveis para o aprendizado bem como trabalho em grupo.
+
+
+
+
+
+
+###1 Básicos: 
+
+Nesta seção praticaremos exercícios de criação de variáveis, tais como, entrada, saída e cálculos
+matemáticos (Recomendo fortemente que procure fazer este em grupo).*italicized text*
+
+**1. Mostrar a mensagem ”Olá, mundo” na tela.**
+
+
+StringOlaMundo="Olá, mundo."
+print(StringOlaMundo)
+
+
+**2. Solicitar um número e mostrar a mensagem "O número informado foi [valor]"**
+
+valor=input("Digite um número: ")
+print("O número informado foi ",valor,".")
+
+**3. Solicitar quatro notas bimestrais e mostrar a média entre elas.**
+
+#Importante garantir que o input é de valor real com a função float()
+no1=float(input("Digite a primeira nota: "))
+no2=float(input("Digite a segunda nota: "))
+no3=float(input("Digite a terceira nota: "))
+soma = no1 + no2 + no3
+print(" A soma das notas é :",soma)
+media = (no1 + no2 + no3)/3
+print(" A média das notas calculada por equação é ", media,"pontos")
+
+
+**4. Solicitar o valor do lado de um quadrado, calcular e mostrar sua área. Fórmula: A = L².**
+
+#Importante garantir que o input é de valor real com a função float()
+L=float(input("Digite o L de um quadrado: "))
+area=L*L
+print("A área desse quadrado é ",area)
+
+### 2 Estruturas de Dados - Parte 1:
+
+Nesta seção praticaremos exercícios de Estruturas de Dados: Listas, Tuplas e Conjuntos (Recomendo
+fortemente que procure fazer este em grupo).
+
+
+**1. Criar uma coleção de números pares entre 0 e 10 e outra de números ímpares entre 0 e 10.Juntar as duas coleçõe e mostrar os números em ordem crescente.**
+
+# Criação das duas coleções (listas) de pares e de ímpares para serem unidas e ordenadas
+pares=[0,2,50,6,8,10]
+impares=[13,43,5,7,9]
+
+# Concatenação das duas coleções (listas)
+l_num=pares+impares
+print("A nova coleção é ",lista_num)
+
+# Criação da lista buffer para receber a ordenação
+order=l_num
+
+# Início do algoritmo de ordenação SELECTION SORT
+for i in range(0,10):
+  for j in range(i+1,11):
+      buffer=order[j]
+      if order[i]>order[j]:
+        #print("HOUVE TROCA de elementos ", i, "  por ", j)
+        order[j]=order[i]
+        order[i]=buffer
+      #print("Laço i=",i,",j= ",j,".Ordenador =", order)
+      #print("_________________________________________")
+# Fim da da ordenação
+
+#Impressão da coleção (lista ordenada)
+print("A nova coleção ordenada crescente é ",order,".") 
+
+# Outra maneira de resolver a questão anterior
+# Criação das duas coleções (listas) de pares e de ímpares para serem unidas e ordenadas
+pares=[0,2,50,6,8,10]
+impares=[13,43,5,7,9]
+# Concatenação das duas coleções (listas)
+l_num=pares+impares
+l_num.sort()
+print("A nova lista é", l_num)
+
+**2. Criar uma coleção com nome de frutas com algumas repetições e transportá-la para outra coleção retirando as repetições.**
+
+
+# Criaçao da coleçao (lista) de frutas com repetição
+frutas=["maçã","pera","melancia","uva","pera","ciriguela","maçã","jaca"]
+#Criação de listas de apoio
+frutassemrepeticao=frutas[::]
+frutasfiltro=[]
+imax=len(frutas)-1
+
+#Ordenamento da lista inicial para faciliar a busca da definição do algoritmo
+frutas.sort()
+
+for i in range(0,imax-1):
+    for j in range(i+1,imax):
+    # A seguir, diversos pontos d echecagem colocado em comentários
+    #print("                  .................Loop de j =",j,".......................")
+    #print("i =",i,"Fruta Pivot em frutas[",i,"]", frutas[i],"|  j= ",j," Fruta checada em frutas [",j,"] =", frutas[j])
+    #print("Frutas antes SE = ", frutas)
+    #print("Teste frutas[i]==frutas[j] = ", frutas[i]==frutas[j])
+      if frutas[i]==frutas[j]:
+        frutasfiltro.append(frutas[i])
+        frutassemrepeticao.pop(i)
+
+# Saida com a solução do exercício        
+print("Coleção inicial de frutas com as repetições.... ", frutas)
+print("Coleção final após retirada de repetições é.... ", frutassemrepeticao)
+print("A coleção receptora das repetidas é............ ", frutasfiltro)
+
+
+**3. Criar uma coleção de nomes e telefones de pelo menos 5 pessoas, organize-as da melhor maneira em uma Lista, Tupla ou Conjunto. Deve ser considerado que a pessoa pode ter mais de um telefone.**
+
+# usanbdo uma lista para armazenar essa agenda telefônica
+LstTel=["João 2334-2356","Pedro 2374-4456","Lucas 2334-2356","Sião 2734-2556","Eduardo 2334-4356","João 9999-2356"]
+LstTel.sort()
+print(LstTel)
+
+
+### 3 Estruturas de Dados - Parte 2:
+
+Nesta seção praticaremos exercícios com a Estrutura de Dados Dicionário  (Recomendo fortemente que procure fazer este em grupo).
+
+
+
+**1. Criar uma lista com pelo menos 5 entradas com os nomes e telefones dos seus amigos.**
+
+#Usando Dicionário para armazenar o telefone de 5 amigos: dicionário de telefones
+DicTel={
+    "João":["2345-2344","2345-4598","1234-6545"],
+    "Pedro":"2354-2345", 
+    "Lucas":"2345-6699",
+    "Sião":"3344-8877",
+    "Atônio":"3243-5465"}
+#Imprimir o dicionário
+print(DicTel)
+
+**2. Mostrar como recuperar o dado de um elemento da lista já criada através da informação do nome.**
+
+#Entrando com um nome pra pesquisar na agenda (Dicionário) de telefone de amigos
+nome=input("Digite o nome que você que pesquisar: ")
+
+#Iniciando o loop para procurar pela key = a string atribuída a nome detro do Dicionário
+if nome in DicTel.keys():
+  print("O contato é ", nome, " - telefone(s): ", DicTel[str(nome)])
+else:
+  print("Não há elementos com o nome: ",nome)
+
+
+
+**3. Mostrar como adicionar um telefone na lista já criada.**
+
+
+# Acrescetando um novo amigo na agenda (Dicionário) de telefones 
+DicTel['Fernando Novo Amigo da Lista']=["1111-9999","2222-8888"]
+
+#Imprimir o Dicionário
+print(DicTel)
+
+
+_______________________________________________________________________
+### 4 Extras para praticar (Não é  necessário para a nota):
+
+
+**1. Solicitar ao usuário inserir: nome, idade e profissão. Mostrar na tela estes dados.**
+
+
+# Entradas
+nome=input("Digite nome : ")
+idade=input("Digite idade : ")
+profissao=input("Digite profissão : ")
+
+# Saídas
+print("___________________________________________")
+print("Nome :",nome)
+print("idade : ",idade)
+print("Profissão : ", profissao)
+
+
+**2. Solicitar o valor da base e altura de um triângulo, calcular e mostrar sua Área. Fórmula: A = (b×a)/2.**
+
+
+
+# Entradas
+base=float(input("Digite o tamanho da base de um triângulo: "))
+altura=float(input("Digite altura desse triângulo : "))
+area=(base*altura)/2
+# Saídas
+print("___________________________________________")
+print("A área do triângulo é :",area)
+
+**3. Solicitar o valor de dois catetos de um triângulo retângulo, calcular e mostrar sua área. Fórmula: Area = (c1×c2)/2.**
+
+
+# Entradas
+c1=float(input("Digite o primeiro cateto do triângulo retângulo (c1) : "))
+c2=float(input("Digite o segundocateto do triângulo retângulo (c2) : "))
+
+#Cálculo da área
+arearet=(c1*c2)/2
+
+# Saídas
+print("___________________________________________")
+print("A área do triângulo é :",arearet)
+
+**4.Solicitar o valor de dois catetos de um triângulo retângulo, calcular e mostrar o valor da altura. Fórmula: Altura = (c1×c2)/hipotenusa. (Sendo hipotenusa²=c1² + c2²). Para o (h - hipotenusa) pode ser usado qualquer valor a sua escolha (para fins desse exercício), porém se for ’desbravador’ saiba que existe uma f´ormula correta para se calcular a hipotenusa que é hipotenusa²=c1² + c2².**
+
+
+
+# Entradas
+c1=float(input("Digite o primeiro cateto do triângulo retângulo (c1) : "))
+c2=float(input("Digite o segundo cateto do triângulo retângulo (c2) : "))
+
+# Cálculo da menor altura do triângulo retângulo pela fórmula mA=c1xc2/(RAIZ_Quadrada(c1²+c2²))
+maltura=(c1*c2)/((c1*c1+c2*c2)**(1/2))
+
+# Saídas
+print("___________________________________________")
+print("A altura do triângulo buscada é :",maltura)
+
+**5. Solicitar o valor da hora e a quantidade de horas trabalhadas no mês.Calcular e mostrar o total do salário recebido.**
+
+
+# Entradas
+horasmensais=float(input("Digite quantas horas são trablahdas no mês : "))
+valorhora=float(input("Digite o valor em R$, o valor da hora trablhada : "))
+
+# Cálculo do salário com 2 casas decimais
+salario= round(horasmensais*valorhora,2)
+
+# Saídas
+print("___________________________________________")
+print("O salário desse mês, foi R$",salario)
+
+**6. O verão de 1994 foi particularmente quente nos EUA. A temperatura foi de 92◦F. Qual é esse valor na escala Celsius? Fórmula: C = (F − 32) × (5/9).**
+
+
+tF=92
+tC=round((tF-32)*(5/9), 2)
+print("Temperatura em", tF,"ºF corresponde a ",tC,"ºC.")
+
+**7. Solicitar o valor da altura e peso de uma pessoa, calcular seu IMC. Fórmula: IMC = p ÷ (a²).**
+
+# Entradas
+p=float(input("Digite o peso (massa) da pessoa em Kg decimal (p) : "))
+a=float(input("Digite a altura da pessoa em metros decimal (a) : "))
+
+# Cálculo do IMC
+IMC=round(p/(a*a),2)
+
+# Saídas
+print("___________________________________________")
+print("O IMC da pessoa é :",IMC)
+
+**8. Solicitar os valores de uma matriz de Ordem 2 e calcular sua determinante. Por exemplo: Vamos considerar a seguinte matriz:**
+<table border="0">
+   <tr><td>1</td> <td>  2 </td> <td> 
+   <tr><td>-5</td> <td> -3 </td> <td> 
+</table>
+<br> OBS.: Em uma matriz de ordem 2, este cálculo é a diferença do produtos da diagonal pelo da secundária, i.e. ( 1 x -3)-(2x-5)=-3-(-10)=13+10=7.** 
+
+
+
+# Apesar do exercício pedir um matriz 2x2, optei por "entrar" com essa informação
+R = int(input("Entre com o númento de linhas:")) 
+C = int(input("Entre com o númento de linhas:")) 
+
+# Leitura dos dados dos elementos da matriz. Comando de varredura de leitura de todos os elementos
+print("Entre com os elementos das linhas sequencialmente:")
+mat = [[int(input()) for x in range (C)] for y in range(R)] 
+
+# Vamos agora verificar a matrix com a sua impressão
+print("A matriz que você digitou foi:")
+for i in range(R): 
+    for j in range(C): 
+        print(mat[i][j], end = " ") 
+    print() 
+
+#Cálculo do determinante
+detmat=
+
+**9. (1) Obter a temperatura média de cada mês do ano e armazená-las em uma coleção. Calcular e mostrar a média anual das temperaturas e todas as temperaturas acima dessa média, e em qual mês ocorreram.**
+
+(1) Essa questão existe por 2 motivos, primeiro não fique tão dependente de comandos de repetição ou decisão e segundo use sua lógica para resolvê-la (e uma ED do tipo Dicionário).
+
+
+**10. Na lista criada no ”Estrutura de Dados - Parte 2”. Mostrar como modificar o telefone de um elemento da lista já criada através da informação do nome.**
+
+
+**11. Na lista criada no ”Estrutura de Dados - Parte 2”. Mostrar como eliminar o telefone de um elemento da lista já criada através da informação do nome.3. Solicitar o valor de dois catetos de um triângulo retângulo, calcular e mostrar sua área. Fórmula: Area = (c1×c2)/2.**
